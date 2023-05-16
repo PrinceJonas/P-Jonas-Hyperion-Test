@@ -1,14 +1,24 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[4]:
 
 
 def hamming_checker(h_bi):
 	#Read Input Into Empty List
 	h_b =[]
 	for i in h_bi:
-		h_b.append(i)		
+		h_b.append(i)
+        
+	while True:
+		if(len(h_b) != 16):
+			return(print("Hamming Block Is Missing Values"))
+		for i in h_b:
+			if i not in {'0','1'}:
+				return(print("Enter A Valid Binary Number"))
+		else:
+			break
+            
 	reg_1 = reg_2 = reg_3 = reg_4 = 0
 	
 	#Check Regions
@@ -47,6 +57,16 @@ def hamming_checker(h_bi):
 			result += str(e)
 		return result
 	
+
+
+ham_block = input("Enter Hamming Block: ")
+print(hamming_checker(ham_block))
+
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:
